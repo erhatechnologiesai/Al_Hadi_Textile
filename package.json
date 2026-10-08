@@ -1,0 +1,12 @@
+{
+  "name": "al-hadi-textile-root",
+  "version": "1.0.0",
+  "description": "AL HADI TEXTILE MILLS - Master Workspace",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix al-hadi-textile/frontend",
+    "dev:backend": "npm run dev --prefix al-hadi-textile/backend",
+    "build": "npm run build --prefix al-hadi-textile/frontend",
+    "start": "npm run start --prefix al-hadi-textile/frontend"
+  }
+}

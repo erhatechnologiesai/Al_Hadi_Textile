@@ -1,0 +1,189 @@
+AL HADI TEXTILES – COMPLETE PROJECT EXECUTION BLUEPRINT & MASTER GUIDEYeh poora document start se end tak complete guide hai jise aap seedha Word document mein copy-paste karke project documentation ya development guide ke taur par istemal kar sakte hain. Isme branding, folder structure, step-by-step roadmap, WhatsApp order system, aur Antigravity ke liye master prompt shamil hai.1. Project Overview & Brand Identity1.1 Brand Vision & PurposeAL HADI ek authentic textile manufacturing brand hai jo premium home textiles aur kitchen linens taiyar karta hai. Website ka maksad domestic buyers aur export/wholesale clients dono ke liye ek professional digital presence banana hai. Design standard aisa hona chahiye jo export-grade lage aur kisi saste AI-template jaisa na dikhe.   1.2 Logo & Visual Identity PaletteLogo ke design aur geometric structure ke mutabiq theme set ki gayi hai:   Primary Brand Orange (#FF6B00): Logo ka vibrant orange color. Iska istemal call-to-action buttons ("Order via WhatsApp"), active badges, highlight borders, aur notification pills ke liye hoga.   Deep Slate / Carbon Charcoal (#161B22): Logo ka dark pillar aur text color. Yeh navigation bar, main headings, dark cards, aur footer mein istemal hoga.   Warm Canvas / Natural Cotton (#F9F8F6): Background color. Pure harsh white ke bajaye yeh halka warm shade website ko natural fabric jaisi premium look deta hai.Woven Border Grey (#E5E7EB): Cards ke subtle borders aur specification tables ke dividers ke liye.Forest Olive Accent (#2D4030): Eco-friendly ya organic linen badges ke liye secondary soft color.1.3 Typography SystemHeadings: Plus Jakarta Sans ya Outfit (Bold, clean aur industrial feel jo logo ke structure se match karti hai).   Body Text & Specifications: Inter ya DM Sans (Clean, modern aur technical details padhne mein aasan).1.4 Human-Crafted Tone Guidelines (AI Fluff se bachne ke rules)❌ Mamnoo Alfaaz (Avoid): "Revolutionizing comfort", "Step into ultimate elegance", "Unmatched world-class luxury", "Delve into quality".✔️ Real Textile Terminology (Use): "100% Ring-spun combed cotton", "240 GSM heavy waffle weave", "Yarn-dyed bistro checks", "Pre-washed for instant absorbency", "Reinforced double-stitched hems".2. Start Se End Tak Complete Step-by-Step RoadmapStep 1: Benchmarking & Inspiration ResearchAntigravity ya developer ko direct code shuru karne se pehle international textile brands ka layout dekhna hoga (jaise Tekla Fabrics, Linen Tales, The White Company).Product pages par sirf tasveer aur price nahi, balki proper fabric specifications (GSM, weave, dimensions, washing instructions) show karni hain.Step 2: Antigravity Code GenerationAntigravity platform par niche diya gaya Master Prompt run karein.Yeh prompt frontend aur backend ka alag alag folder structure, APIs, mock data, aur WhatsApp integration ek sath ready karega.Step 3: Local Setup & Dependencies InstallationProject download karne ke baad local machine par run karne ke steps:Bash# 1. Frontend setup
+cd al-hadi-textile/frontend
+npm install
+npm run dev
+
+# 2. Backend setup (Alag terminal window mein)
+cd al-hadi-textile/backend
+npm install
+npm run dev
+Step 4: Product Images & Custom Data LaganaJab aapke paas actual product ki pictures aayengi:Pictures ko high resolution mein frontend/public/images/products/ folder mein save karein:kitchen-towel-1.jpg, kitchen-towel-2.jpgtea-towel-1.jpg, tea-towel-2.jpgbread-bag-1.jpg, bread-bag-2.jpgbackend/src/data/mockProducts.js ya database ke andar image path update karein (/images/products/kitchen-towel-1.jpg).Logo file frontend/public/images/logo.png par save karein.   Step 5: WhatsApp Business Number Configure Karnafrontend/src/lib/utils.ts mein ja kar phone number replace karein:JavaScriptconst WHATSAPP_NUMBER = "923XXXXXXXXX"; // Apna active business WhatsApp number dalein
+Step 6: Testing & LaunchHar product ke card par "Order via WhatsApp" click karke dekhein ke message theek se format ho raha hai ya nahi.Mobile responsive layout check karein taake phone par website fast aur clean load ho.Frontend ko Vercel par aur Backend ko Render ya Railway par deploy karein.3. Full Project Architecture & Folder TreePlaintextal-hadi-textile/
+│
+├── frontend/
+│   ├── public/
+│   │   ├── images/
+│   │   │   ├── logo.png                    # AL HADI Logo
+│   │   │   ├── hero-fabric.jpg
+│   │   │   └── products/
+│   │   │       ├── kitchen-towels/
+│   │   │       ├── tea-towels/
+│   │   │       └── bread-bags/
+│   │   └── icons/
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── layout.tsx                  # Global Navbar, Footer, Providers
+│   │   │   ├── page.tsx                    # Landing Page (Hero, Collections, Trust signals)
+│   │   │   ├── products/
+│   │   │   │   ├── page.tsx                # Catalog filter by Category
+│   │   │   │   └── [slug]/
+│   │   │   │       └── page.tsx            # Full product details, GSM specs, care guide
+│   │   │   ├── about/
+│   │   │   │   └── page.tsx                # Weaving mill process & craftsmanship story
+│   │   │   └── contact/
+│   │   │       └── page.tsx                # Bulk inquiry form
+│   │   ├── components/
+│   │   │   ├── ui/
+│   │   │   │   ├── Button.tsx
+│   │   │   │   ├── Badge.tsx
+│   │   │   │   └── SpecTable.tsx
+│   │   │   ├── Navbar.tsx
+│   │   │   ├── Footer.tsx
+│   │   │   ├── ProductCard.tsx
+│   │   │   ├── WhatsAppButton.tsx
+│   │   │   └── CategoryFilter.tsx
+│   │   ├── lib/
+│   │   │   ├── api.ts                      # Backend API caller (Axios)
+│   │   │   └── utils.ts                    # WhatsApp link generator
+│   │   └── styles/
+│   │       └── globals.css                 # Tailwind custom theme styles
+│   ├── package.json
+│   └── tailwind.config.js
+│
+├── backend/
+│   ├── src/
+│   │   ├── config/
+│   │   │   └── db.js                       # SQLite / PostgreSQL / MongoDB connection
+│   │   ├── controllers/
+│   │   │   ├── productController.js        # Products CRUD
+│   │   │   └── inquiryController.js        # WhatsApp click & lead storage
+│   │   ├── models/
+│   │   │   ├── Product.js                  # Product Schema (GSM, Weave, Size, Images)
+│   │   │   └── Inquiry.js                  # Click logs & Customer inquiries
+│   │   ├── routes/
+│   │   │   ├── productRoutes.js
+│   │   │   └── inquiryRoutes.js
+│   │   ├── data/
+│   │   │   └── mockProducts.js             # Initial textile seed data
+│   │   └── server.js                       # Express app entry point
+│   ├── .env
+│   └── package.json
+└── README.md
+4. Core Features & Code Implementations4.1 WhatsApp Direct Order FlowHar product card par ek dynamic button hoga jo user ki choice ke mutabiq text message generate karega.TypeScript// frontend/src/lib/utils.ts
+
+export interface ProductDetails {
+  id: string;
+  name: string;
+  slug: string;
+  category: string;
+  fabric: string;
+  gsm: number;
+  dimensions: string;
+}
+
+export function generateWhatsAppOrderUrl(product: ProductDetails, quantity: number = 1): string {
+  const businessPhone = "923001234567"; // AL HADI Business Number
+
+  const messageText = `Salam AL HADI Textiles,
+Mujhe is product ka order / rate confirm karna hai:
+
+• Product: ${product.name}
+• Category: ${product.category}
+• Fabric: ${product.fabric} (${product.gsm} GSM)
+• Size: ${product.dimensions}
+• Required Quantity: ${quantity} piece(s)
+
+Product Link: https://alhaditextiles.com/products/${product.slug}
+
+Meherbani karke wholesale / retail rate aur delivery details share karein.`;
+
+  return `https://wa.me/${businessPhone}?text=${encodeURIComponent(messageText)}`;
+}
+4.2 Lead Logging Backend RouteCustomer jab WhatsApp button dabayega, front-end pehle backend ko lead log bhejega taake record rahe ke kis product par ziyada orders aa rahe hain:JavaScript// backend/src/controllers/inquiryController.js
+
+const inquiries = []; // Ya database model mein save karein
+
+export const recordInquiry = async (req, res) => {
+  try {
+    const { productId, productName, customerDevice, quantity } = req.body;
+    
+    const newInquiry = {
+      id: Date.now().toString(),
+      productId,
+      productName,
+      customerDevice: customerDevice || 'web',
+      quantity: quantity || 1,
+      createdAt: new Date().toISOString()
+    };
+
+    inquiries.push(newInquiry);
+    
+    return res.status(201).json({
+      success: true,
+      message: "Lead recorded successfully",
+      data: newInquiry
+    });
+  } catch (error) {
+    return res.status(500).json({ success: false, message: error.message });
+  }
+};
+5. Antigravity Master Prompt (Direct Copy & Paste)Yeh prompt copy karke Antigravity mein run karein:MarkdownRole & Task:
+You are an expert full-stack developer, product architect, and textile industry UI/UX specialist. Build an export-ready, modern, human-crafted full-stack web application for "AL HADI" (an authentic home linen and clothing textile manufacturer).
+
+CRITICAL DESIGN MANDATE (AVOID AI TEMPLATE LOOK):
+The website MUST look like it was handcrafted by an experienced digital product designer for an export textile mill. Do NOT use generic gradients, cartoonish shapes, or filler AI copy like "Revolutionizing fabrics". Instead, adopt a clean, tactile, editorial aesthetic inspired by modern textile leaders (like Tekla, Linen Tales, and high-end B2B mills).
+
+BENCHMARK & RESEARCH INSTRUCTION:
+Simulate web benchmarking across modern textile portals. Incorporate technical garment/fabric metrics prominently: GSM badges, yarn construction, weave types, shrinkage tolerances, and stitch finishes.
+
+BRAND IDENTITY SPECIFICATIONS:
+- Brand Name: AL HADI
+- Primary Accent: #FF6B00 (Vibrant Textile Orange matched to logo)
+- Primary Dark: #161B22 (Carbon Charcoal slate matched to logo)
+- Background Base: #F9F8F6 (Warm natural cotton) and #FFFFFF
+- Border Color: #E5E7EB
+- Typography: Plus Jakarta Sans for headings, Inter for body and technical tables.
+
+PROJECT STRUCTURE & TECHNOLOGIES:
+Strictly separate frontend and backend into two clear folders:
+/al-hadi-textile
+  ├── /frontend   (Next.js 14 App Router, Tailwind CSS, Lucide React, Framer Motion)
+  └── /backend    (Node.js, Express.js REST API, SQLite or MongoDB with Prisma/Mongoose)
+
+INITIAL PRODUCT CATALOG & DATA TO POPULATE:
+Populate realistic, production-ready mock data for the following categories:
+1. Kitchen Towels:
+   - "Honeycomb Waffle Kitchen Towel" (100% Combed Cotton, 240 GSM, 45x70 cm, Fast-drying, hemmed border)
+   - "Heavy Duty Terry Dish Cloth" (Cotton Loop Terry, 320 GSM, 30x30 cm, ultra-absorbent)
+2. Tea Towels:
+   - "Classic Yarn-Dyed Bistro Check Tea Towel" (100% Ring-Spun Cotton, 190 GSM, 50x70 cm, Lint-free glass polisher)
+   - "Herringbone Stripe Bar Towel" (Dobby Weave, 210 GSM, 40x60 cm)
+3. Bread Bags:
+   - "Unbleached Organic Cotton Bread Bag" (Breathable pure linen/cotton blend, Natural drawstring closure, 30x40 cm)
+   - "Artisan Loaf Keeper Bag" (Crumb-guard tight weave, reusable eco-pack)
+4. Custom Institutional & Apparel Linen:
+   - Export-quality institutional bed sheets, chef aprons, and woven fabrics.
+
+KEY FUNCTIONAL REQUIREMENTS:
+
+1. Dynamic Image Support:
+   - Setup components so high-res custom photography can easily be dropped into `/frontend/public/images/products/` and referenced via standard URLs.
+
+2. WhatsApp Direct Order Flow:
+   - Every Product Card and Single Product Page (/products/[slug]) must include an "Order via WhatsApp" button styled in #FF6B00.
+   - When clicked, asynchronously call `POST /api/inquiries` on the backend to log the click lead, then open WhatsApp (`https://wa.me/<PHONE>?text=...`) with a structured pre-filled text including: Product Title, Category, GSM, Dimensions, Quantity, and Product URL.
+
+3. Frontend Pages:
+   - Home Page: High-impact hero section with tactile texture background, category grid, fabric quality breakdown, and customer trust badges.
+   - Catalog Page (/products): Live filtering by category (Kitchen Towels, Tea Towels, Bread Bags), GSM filter, and responsive grid.
+   - Product Details Page (/products/[slug]): Image gallery, detailed Fabric Tech Specs table (Material, GSM, Weave, Dimensions, Care instructions), quantity counter, and Direct WhatsApp CTA.
+   - About & Mill Story: Craftsmanship details, yarn quality, and bulk export capabilities.
+
+4. Backend REST APIs:
+   - GET `/api/products` (supports `?category=` filter)
+   - GET `/api/products/:slug` (returns full product data and specs)
+   - POST `/api/inquiries` (records lead details: productId, productName, device, timestamp)
+   - POST `/api/products` (allows adding new products with specs and image paths)
+
+DELIVERABLE:
+Provide full runnable code, configuration files (`tailwind.config.js`, `package.json`), clean folder hierarchy, mock data files, and setup instructions.

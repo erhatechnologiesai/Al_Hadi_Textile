@@ -1,0 +1,15 @@
+[
+  {
+    "id": "inq-1791398884600",
+    "type": "whatsapp_click",
+    "productId": "prod-001",
+    "productName": "Charcoal Waffle Combed Cotton Dish Cloth Set",
+    "category": "General",
+    "gsm": null,
+    "customerDevice": "desktop_test",
+    "quantity": 5,
+    "notes": "",
+    "ipAddress": "::1",
+    "createdAt": "2026-10-07T18:48:04.601Z"
+  }
+]

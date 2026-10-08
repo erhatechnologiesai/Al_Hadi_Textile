@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #FD7803;
+  --color-dark: #23282E;
+  --color-canvas: #FAF9F7;
+  --color-border: #E7E5E1;
+}
+
+body {
+  background-color: #FAF9F7;
+  color: #23282E;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Subtle scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #F3F1EC;
+}
+::-webkit-scrollbar-thumb {
+  background: #D5D2CB;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FD7803;
+}
+
+/* Floating animation */
+@keyframes softFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-soft-float {
+  animation: softFloat 3.5s ease-in-out infinite;
+}
+
+/* Eye-catching glowing pulse on WhatsApp button */
+@keyframes whatsappGlow {
+  0%, 100% {
+    box-shadow: 0 4px 14px 0 rgba(253, 120, 3, 0.39);
+  }
+  50% {
+    box-shadow: 0 6px 22px 4px rgba(253, 120, 3, 0.6);
+  }
+}
+
+.whatsapp-glow-btn {
+  animation: whatsappGlow 2.5s infinite;
+}
+
+/* Subtle Fabric texture pattern */
+.fabric-texture-bg {
+  background-color: #FAF9F7;
+  background-image: radial-gradient(#E2DFD8 0.65px, transparent 0.65px);
+  background-size: 14px 14px;
+}
+
+.textile-card {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+.textile-card:hover {
+  transform: translateY(-4px);
+}
